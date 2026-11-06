@@ -1,6 +1,6 @@
-## 开源贡献
+## Open Source Contributions
 
-- **{{CONTRIBUTION_1_PROJECT}}**：解决 {{CONTRIBUTION_1_PROBLEM}}；贡献：{{CONTRIBUTION_1_SOLUTION}}。
-  PR / Issue / Discussion：{{CONTRIBUTION_1_URL}}
-- **{{CONTRIBUTION_2_PROJECT}}**：解决 {{CONTRIBUTION_2_PROBLEM}}；贡献：{{CONTRIBUTION_2_SOLUTION}}。
-  PR / Issue / Discussion：{{CONTRIBUTION_2_URL}}
+- **{{CONTRIBUTION_1_PROJECT}}**: Problem: {{CONTRIBUTION_1_PROBLEM}}; Contribution: {{CONTRIBUTION_1_SOLUTION}}.
+  PR / Issue / Discussion: {{CONTRIBUTION_1_URL}}
+- **{{CONTRIBUTION_2_PROJECT}}**: Problem: {{CONTRIBUTION_2_PROBLEM}}; Contribution: {{CONTRIBUTION_2_SOLUTION}}.
+  PR / Issue / Discussion: {{CONTRIBUTION_2_URL}}

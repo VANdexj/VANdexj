@@ -1,15 +1,15 @@
-## 精选项目
+## Selected Projects
 
 ### {{PROJECT_1_NAME}}
 
-- 用途：{{PROJECT_1_PURPOSE}}
-- 价值：{{PROJECT_1_VALUE}}
-- 主要技术：{{PROJECT_1_TECHNOLOGIES}}
-- 仓库：{{PROJECT_1_REPOSITORY_URL}}
+- Purpose: {{PROJECT_1_PURPOSE}}
+- Value: {{PROJECT_1_VALUE}}
+- Technologies: {{PROJECT_1_TECHNOLOGIES}}
+- Repository: {{PROJECT_1_REPOSITORY_URL}}
 
 ### {{PROJECT_2_NAME}}
 
-- 用途：{{PROJECT_2_PURPOSE}}
-- 价值：{{PROJECT_2_VALUE}}
-- 主要技术：{{PROJECT_2_TECHNOLOGIES}}
-- 仓库：{{PROJECT_2_REPOSITORY_URL}}
+- Purpose: {{PROJECT_2_PURPOSE}}
+- Value: {{PROJECT_2_VALUE}}
+- Technologies: {{PROJECT_2_TECHNOLOGIES}}
+- Repository: {{PROJECT_2_REPOSITORY_URL}}
