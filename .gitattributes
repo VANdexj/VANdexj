@@ -1,0 +1,7 @@
+# Keep source files and generated output consistent on Windows and Linux.
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+.gitattributes text eol=lf

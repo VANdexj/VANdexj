@@ -1,0 +1,8 @@
+{
+  "modules": [
+    { "name": "intro", "enabled": true },
+    { "name": "projects", "enabled": true },
+    { "name": "contributions", "enabled": true },
+    { "name": "notes", "enabled": false }
+  ]
+}

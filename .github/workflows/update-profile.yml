@@ -1,0 +1,60 @@
+name: Update profile README
+
+on:
+  push:
+    paths:
+      - 'modules/**'
+      - 'profile.config.json'
+      - 'scripts/**'
+      - '.github/workflows/update-profile.yml'
+      - '.gitattributes'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  update:
+    # Resolve the default branch dynamically; other branches and tags never write.
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: profile-readme-${{ github.repository }}
+      cancel-in-progress: false
+    env:
+      PROFILE_BRANCH: ${{ github.event.repository.default_branch }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out the latest default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # A queued run builds the current branch, not an older triggering SHA.
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13'
+
+      - name: Generate and verify README
+        run: |
+          python scripts/build_readme.py
+          python scripts/build_readme.py --check
+
+      - name: Commit README only when changed
+        run: |
+          git add -- README.md
+          if git diff --cached --quiet -- README.md; then
+            echo "README.md is unchanged; no commit needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs: update profile README" -- README.md
+          # A concurrent human push is rejected safely. Re-run to build its sources.
+          git push origin "HEAD:refs/heads/$PROFILE_BRANCH"
